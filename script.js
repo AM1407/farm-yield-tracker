@@ -37,7 +37,7 @@ submitBtn.addEventListener("click", () => {
   const species = speciesInput.value.trim();
   const yieldAmount = Number(yieldInput.value);
 
-  if (!name || !species || !yieldAmount) {
+  if (!name || !species || !yieldInput.value === "") {
     alert("Please fill all fields before submitting.");
     return;
   }
