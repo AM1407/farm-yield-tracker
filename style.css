@@ -3,13 +3,36 @@ body{
     margin: 0;
     font-family:'Courier New', sans-serif;
     background: #ffffff;
-    background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(166, 114, 123, 1) 100%);
+    background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(242, 255, 0, 1) 100%);
 }
 
 .btn.dropdown-toggle {
   height: calc(3.5rem + 2px); /* matches form-floating height */
   line-height: 1.25rem;
 }
+
+.totalOutput {
+  background-color: transparent !important; /* remove white fill */
+  border: none !important;                  /* remove border lines */
+  box-shadow: none !important;              /* remove Bootstrap's inner shadow */
+  color: #000;                              /* keep text visible */
+  text-align: center;
+}
+
+.boxTotals {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 75%;
+}
+
+.boxInput,
+.boxTotals {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
 
 
 
