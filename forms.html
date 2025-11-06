@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forms</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="icon" type="image/x-icon" href="img/sun.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmYieldTool - Records</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="img/sun.png" />
 </head>
 <body>
-    <p></p>
+  <!-- Navbar -->
+  <nav class="navbar bg-body-tertiary shadow-lg mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/sun.png" alt="Logo" width="30" height="auto" class="d-inline-block align-text-top" />
+        Sunshine Farms — Yield Records
+      </a>
+    </div>
+  </nav>
 
+  <!-- Data Table -->
+  <div class="container">
+    <h3 class="text-center mb-4">Farm Yield Records</h3>
 
+    <table id="dataTable" class="table table-striped table-hover align-middle shadow-sm">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Species</th>
+          <th scope="col">Yield</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Rows will be loaded by JavaScript -->
+      </tbody>
+    </table>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>   
+    <div class="text-center mt-4">
+      <button id="clearData" class="btn btn-outline-danger">Clear All Records</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="forms.js"></script>
 </body>
 </html>
