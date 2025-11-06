@@ -20,17 +20,21 @@
                         <label for="floatingInputValue">Name</label>
                     
                     </form>
-                    <form class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInputValue" placeholder="Cow" value="">
-                        <label for="floatingInputValue">Species</label>
-                    
-                    </form>
+                    <div class="input-group mb-3 ">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Species</button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Cow</a></li>
+                            <li><a class="dropdown-item" href="#">Chicken</a></li>
+                            <li><a class="dropdown-item" href="#">Goat</a></li>
+                        </ul>
+                        <input id="speciesInput" type="text" class="form-control mh-100" aria-label="Text input with dropdown button" readonly>
+                    </div>
                     <form class="form-floating">
                         <input type="email" class="form-control" id="floatingInputValue" placeholder="Liters" value="">
                         <label for="floatingInputValue">Yield</label>
                     </form>
                     <div class="col text-center mt-5">
-                        <button type="button" class="btn btn-outline-secondary">Placeholder</button>
+                        <button type="button" class="btn btn-outline-secondary">Forms</button>
                     </div>
                 </div>
             </div>
@@ -39,15 +43,28 @@
                 <div class="border border-black d-flex flex-column rounded-3">
                     <h4>Totals</h4>
                     <div class="d-flex flex-column">
-                        <div class="p-2 d-flex align-items-baseline gap-2"><img src="img/cow.png" class="w-25"><br><p id="cowtotal" class="mb-0">Flex item 1</p><p>Liters</p></div>
-                        <div class="p-2 d-flex align-items-baseline gap-2"><img src="img/chicken.png" class="w-25"><br><p id="chickentotal" class="mb-0">Flex item 1</p><p>Eggs</p></div>
-                        <div class="p-2 d-flex align-items-baseline gap-2"><img src="img/goat.png" class="w-25"><br><p id="goattotal" class="mb-0">Flex item 1</p><p>Liters</p></div>
+                        <div class="p-2 d-flex align-items-center gap-2">
+                            <img src="img/cow.png" class="w-25" alt="Cow">
+                            <input type="text" id="cowtotal" class="form-control totalOutput w-35 text-center" readonly>
+                            <span>Liters</span>
+                        </div>
+                        <div class="p-2 d-flex align-items-center gap-2">
+                            <img src="img/chicken.png" class="w-25" alt="Chicken">
+                            <input type="text" id="chickentotal" class="form-control totalOutput w-35 text-center" readonly>
+                            <span>Eggs</span>
+                        </div>
+                        <div class="p-2 d-flex align-items-center gap-2">
+                            <img src="img/goat.png" class="w-25" alt="Goat">
+                            <input type="text" id="goattotal" class="form-control totalOutput w-35 text-center" readonly>
+                            <span>Liters</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-              
+   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script> 
 </body>
 </html>

@@ -6,4 +6,10 @@ body{
     background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(166, 114, 123, 1) 100%);
 }
 
+.btn.dropdown-toggle {
+  height: calc(3.5rem + 2px); /* matches form-floating height */
+  line-height: 1.25rem;
+}
+
+
 
