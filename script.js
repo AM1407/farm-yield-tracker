@@ -1,4 +1,5 @@
 // === ELEMENT SELECTION ===
+// This file is ONLY for index.html
 const farmForm = document.getElementById('farm-form'); // Get the FORM
 const nameInput = document.getElementById('nameInput');
 const speciesInput = document.getElementById('speciesInput');
@@ -57,9 +58,7 @@ farmForm.addEventListener("submit", (e) => {
     sendDataToApi(newAnimalEntry);
 
     // 6. [ORIGINAL] Clear input fields
-    nameInput.value = "";
-    speciesInput.value = "";
-    yieldInput.value = "";
+    farmForm.reset(); // This is a simpler way to clear the form
 });
 
 /**
