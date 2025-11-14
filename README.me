@@ -1,25 +1,77 @@
-A simple and intuitive farm management tool built with HTML, CSS, Bootstrap, and vanilla JavaScript.
+# 🚜 Farm Yield Tracker
 
-The app allows farmers to record daily yields for different animals (such as cows, goats, and chickens) through a responsive web form. Totals are automatically calculated and displayed in real time.
 
-A secondary page simulates a database view, listing all entries to provide a printable overview of daily production.
 
-The project is designed as a foundation for future full-stack development — later versions may include real database integration, authentication, and species-specific analytics (e.g., milk quality, feed tracking, or antibiotic logs).
+A full-stack (mock) application for logging and tracking the daily yield of farm animals. It features a clean, responsive interface and a dual data storage system that saves entries to both the browser's `localStorage` and a mock REST API.
 
-Tech Stack:
 
-"HTML5"
+![A screenshot of the Farm Yield Tracker dashboard.](img/working_example.png)(img/working_example1.png)
 
-"CSS3 / Bootstrap"
+---
 
-"JavaScript (ES6)"
+## ✨ Core Features
 
-"LocalStorage (simulated data persistence)"
+* **Responsive Input Form:** A clean form to log entries by animal name, species (Cow, Chicken, or Goat), and yield (Liters/Eggs).
+* **Real-time Dashboard:** The main page features a "Totals" panel that updates instantly with the total yield collected for each animal type.
+* **Persistent Data:** All entries are saved so they are not lost on refresh.
+* **Detailed Records Page:** A separate "Records" page (`forms.html`) builds a table of all entries for a complete history.
+* **Clear All:** A "Clear All" button on the records page that purges the data from *both* `localStorage` and the mock API.
 
-Project Goals:
+---
 
-"Practice separation of concerns between structure, style, and logic"
+## 🗄️ Dual Data Storage System
 
-"Demonstrate front-end data handling without external APIs"
+This project's key feature is its demonstration of two parallel data persistence methods:
 
-"Lay the groundwork for a future farm management application"
+1.  **LocalStorage (Client-Side):**
+    * All entries are saved to the browser's `localStorage`.
+    * This storage is used to instantly populate the **"Totals" dashboard** and the **"Records" table**, making the UI fast and responsive.
+
+2.  **Mock REST API (Server-Side):**
+    * When a new entry is submitted, it is also sent via a `POST` request (`fetch`) to a mock API endpoint (`http://localhost:3000/animals`).
+    * When "Clear All" is pressed, the app sends `DELETE` requests for every item on the server, demonstrating how to manage remote data.
+
+---
+
+## 🛠️ Technologies Used
+
+* **HTML5:** Structured with two separate pages (`index.html` for input, `forms.html` for output).
+* **CSS3:** Custom styling for gradients, card shadows, and a clean UI.
+* **Bootstrap 5:** Used for the entire layout, including the navbar, form controls (floating labels, dropdowns), grid, and table.
+* **Vanilla JavaScript (ES6+):**
+    * Handles all DOM manipulation.
+    * Manages data in arrays of objects.
+    * Uses the `localStorage` API for client-side storage.
+    * Uses the `fetch()` API with `async/await` for all API communication (`POST`, `GET`, `DELETE`).
+* **`json-server`:** Used as a mock REST API to simulate a real server backend.
+
+---
+
+## 🚀 How to Run This Project
+
+You can run this project in two modes:
+
+### Mode 1: LocalStorage Only (Simple)
+
+1.  Clone the repository.
+2.  Open the `index.html` file directly in your browser.
+3.  The app will work perfectly, but will **only** use `localStorage`. You will see errors in the console (e.g., `Failed to fetch`) when the app tries to connect to the API, which is normal.
+
+### Mode 2: Full API Mode (Recommended)
+
+To run the app with its complete, dual-storage functionality, you must run the `json-server`.
+
+1.  **Prerequisites:** You must have [Node.js](https://nodejs.org/) installed.
+
+2.  **Install `json-server`:** If you don't have it, install it globally from your terminal:
+    ```bash
+    npm install -g json-server
+    ```
+
+3.  **Start the API:** Navigate to the project folder in your terminal and run:
+    ```bash
+    json-server --watch db.json
+    ```
+    This will start a mock server at `http://localhost:3000`.
+
+4.  **Run the App:** Now, open `index.html` in your browser. The app will run with no console errors and will save all data to *both* `localStorage` and your `db.json` file.
