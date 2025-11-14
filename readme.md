@@ -10,6 +10,7 @@ The mock API (json-server) functionality cannot run on GitHub Pages, so you will
 
 A full-stack (mock) application for logging and tracking the daily yield of farm animals. It features a clean, responsive interface and a dual data storage system that saves entries to both the browser's `localStorage` and a mock REST API.
 
+## 📸 Preview
 
 ![A screenshot of the Farm Yield Tracker dashboard.](img/working_example.png)
 ![Another screenshot.](img/working_example1.png)
